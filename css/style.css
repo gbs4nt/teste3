@@ -174,7 +174,7 @@ button:hover {
 }
 .photo-container {
     position: relative;
-    width: 80%;
+    width: 70%;
     max-width: 300px;
     cursor: pointer;
 }
@@ -199,6 +199,8 @@ button:hover {
     margin: 50px auto;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
     
 }
 
@@ -213,14 +215,16 @@ button:hover {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     transform: translateX(0);
 }
 
 .carousel-item {
-    flex: 0 0 200px;
+    flex: 0 0 50%;
+    max-width: 100%;
+    scroll-snap-align: start;
     perspective: 1000px; /* Efeito 3D */
 }
 
@@ -503,7 +507,8 @@ button:hover {
     }
 
     .carousel-item {
-        flex: 0 0 90%;
+        flex: 0 0 60%;
+        max-width: 60%;
     }
 
     .footer {
