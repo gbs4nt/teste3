@@ -1,0 +1,512 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+    background: linear-gradient(135deg, #f4f0e1, #faf3e0);
+    background-size: cover;
+    /* border: 2px solid #e0b97e; */
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);;
+    border-radius: 12px;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.container {
+    background-color: #f5c146;
+    color: #2c3e50;
+    padding: 15px;
+    font-size: 26px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    overflow: visible;/* Criar um efeito de borda "pressionada" */
+}
+.floating-elements {
+    position: relative; /* Garante que as imagens sejam posicionadas em relação a este contêiner */
+    padding: 0;         /* Remove qualquer padding */
+    margin: 0;          /* Remove qualquer margem */
+    border: none;       /* Remove qualquer borda */
+    overflow: visible;  /* Garante que o conteúdo flutuante fique visível */
+}
+
+
+.floating-elements img {
+    width: 100px;
+    
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10px, 10px) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+.header {
+    background-color: #f5c146;; /* Amarelo dourado */
+    color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    animation: headerAnimation 2s ease-in-out;
+}
+.header::before {
+    content: "🌸"; /* Flor no canto superior esquerdo */
+    font-size: 24px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: bold;
+    word-wrap: break-word;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Tom escuro, mas suave, para a leitura */
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    font-style: italic;
+    color: #fff; /* Tom laranja suave, relacionado ao mel */
+}
+
+.content {
+    margin-top: 30px;
+}
+
+.message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    background-color: #f5c146; /* Amarelo dourado */
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #d35400; /* Laranja escuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #e67e22; /* Laranja mais claro */
+    transform: scale(1.05);
+}
+.dedication{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.photo-container.show-dedication, .dedication{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.photo-container {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.photo {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilização do Carrossel */
+.photo-carousel {
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.photo-carousel h2 {
+    margin-bottom: 20px;
+    color: #f39c12;
+    font-size: 24px;
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+}
+
+.carousel-item {
+    flex: 0 0 200px;
+    perspective: 1000px; /* Efeito 3D */
+}
+
+/* Cartão que vira */
+.card {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: #f5c146;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Botões do Carrossel */
+#prevBtn,
+#nextBtn {
+    background-color: #d35400;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+    background-color: #e67e22;
+}
+
+.interactive-heart {
+    margin-top: 40px;
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+    background: #f39c12; /* Amarelo dourado */
+    transform: rotate(45deg);
+    position: relative;
+    margin: 20px auto;
+    box-shadow: -10px 10px 90px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f39c12;
+}
+
+.heart:before {
+    left: -30px;
+    top: 0;
+}
+
+.heart:after {
+    top: -30px;
+    left: 0;
+}
+
+.extra-info {
+    margin-top: 50px;
+    font-size: 20px;
+    color: #333;
+}
+.extra-info h2{
+   color: #f39c12;
+}
+
+.extra-info::after {
+    content: "🌻"; /* Flor delicada no final da seção */
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.fade-info {
+    opacity: 0;
+    animation: fadeInInfo 2s ease-out forwards;
+    margin-top: 20px;
+}
+
+.final-message {
+    margin-top: 60px;
+    font-size: 24px;
+    color: #f39c12; /* Amarelo dourado */
+    font-weight: bold;
+    animation: fadeIn 2s ease-out;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #f39c12; /* Amarelo dourado */
+    color: #fff;
+    border-radius: 10px;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% {
+        transform: scale(1) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(45deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInInfo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .photo-gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .photo-container {
+        width: 90%;
+    }
+
+    .carousel {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-item {
+        flex: 0 0 80%;
+    }
+
+    #prevBtn, #nextBtn {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .extra-info h2 {
+        font-size: 20px;
+    }
+
+    .extra-info p {
+        font-size: 14px;
+    }
+
+    .final-message {
+        font-size: 18px;
+    }
+
+    .heart {
+        width: 40px;
+        height: 40px;
+    }
+
+    .heart:before,
+    .heart:after {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Responsividade para celulares muito pequenos */
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .photo-container {
+        width: 100%;
+    }
+
+    .carousel-item {
+        flex: 0 0 90%;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
