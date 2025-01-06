@@ -24,6 +24,7 @@ function updateCarousel() {
     const offset = currentIndex * -320;
     carousel.style.transform = `translateX(${offset}px)`;  // Atualiza a posição do carrossel
     checkButtons();  // Checa o estado dos botões
+    updateImageVisibility(); // Atualiza a visibilidade das imagens
 }
 
 // Função para verificar se os botões devem estar habilitados
@@ -33,6 +34,18 @@ function checkButtons() {
 
     // Se o índice for menor que o número total de fotos - 1, o botão de próximo deve ser habilitado
     nextBtn.disabled = currentIndex === cards.length - 1;
+}
+
+// Função para atualizar a visibilidade das imagens
+function updateImageVisibility() {
+    cards.forEach((card, index) => {
+        // Se a imagem não for a imagem atual, a torna invisível
+        if (index !== currentIndex) {
+            card.classList.remove('show');
+        } else {
+            card.classList.add('show'); // Torna a imagem atual visível
+        }
+    });
 }
 
 // Botão anterior
@@ -62,7 +75,6 @@ cards.forEach((card) => {
 document.getElementById('heart').addEventListener('click', function () {
     alert("Beijinho 💋");
 });
-
 
 // Efeito de fade ao rolar a página
 window.addEventListener('scroll', function () {
