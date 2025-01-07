@@ -287,12 +287,9 @@ button:hover {
     align-items: center;
     transform: translateX(0);
 }
-.foto-escondida{
-    display: none;
-    pointer-events: none;
-}
+
 .carousel-item {
-    flex: 0 0 35%;
+    flex: 0 0 34%;
     max-width: 100%;
     scroll-snap-align: start;
     perspective: 1000px; /* Efeito 3D */
@@ -589,7 +586,11 @@ button:hover {
         width: 100%;
     }
     .carousel-item {
-        flex: 0 0 94%;
+        flex: 0 0 89%;
+    }
+    .foto-escondida{
+        display: none;
+        pointer-events: none;
     }
     .card {
         flex: 0 0 auto;
