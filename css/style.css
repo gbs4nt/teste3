@@ -287,9 +287,12 @@ button:hover {
     align-items: center;
     transform: translateX(0);
 }
-
+.foto-escondida{
+    display: none;
+    pointer-events: none;
+}
 .carousel-item {
-    flex: 0 0 50%;
+    flex: 0 0 35%;
     max-width: 100%;
     scroll-snap-align: start;
     perspective: 1000px; /* Efeito 3D */
@@ -427,7 +430,65 @@ button:hover {
     font-weight: bold;
     animation: fadeIn 2s ease-out;
 }
+.video-section{
+    background: linear-gradient(135deg, #fdf6e3 30%, #ffcf66 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 800px;
+}
+.video-title{
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #5a4300;
+    margin-bottom: 20px;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
+.video-wrapper{
+    border: 5px solid #ffbf47;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.video-wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(255,223, 186, 0.3), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+.video-wrapper video{
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+}
+/* .video-wrapper:hover video{
+    transform: scale(1.05)
+} */
+
+/* .video-section:hover{
+    animation: pulse 1.5s infinite;
+} */
+
+/* @keyframes pulse{
+    0%, 100%{
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+    50%{
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+} */
 .footer {
     margin-top: 40px;
     padding: 10px;
