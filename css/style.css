@@ -561,67 +561,68 @@ button:hover {
     
     .floating-elements img {
         display: block;
-        width: 70px;
+        width: 55px;
     }
     
     .floating-img-1 {
         top: 30px;
-        left: 20px;
+        left: -10px;
     }
 
     .floating-img-2 {
         top: 120px;
-        right: -20px;
+        right: -10px;
     }
 
     .floating-img-3 {
         top: 200px;
-        left: 20px;
+        left: -10px;
     }
 
     .floating-img-4 {
         top: 280px;
-        right: -20px;
+        right: -10px;
     }
 
     .floating-img-5 {
         top: 360px;
-        left: 20px;
+        left: -10px;
     }
 
     .floating-img-6 {
         top: 440px;
-        right: -20px;
+        right: -10px;
     }
 
     .floating-img-7 {
         top: 520px;
-        left: 20px;
+        left: -10px;
     }
 
     .floating-img-8 {
         top: 600px;
-        right: -20px;
+        right: -10px;
     }
 
     .floating-img-9 {
         top: 680px;
-        left: 20px;
+        left: -10px;
     }
 
     .floating-img-10 {
-        top: 760px;
-        right: -20px;
+        top: 790px;
+        right: -10px;
     }
 
     .floating-img-11 {
         top: 840px;
-        left: 20px;
+        left: -10px;
+      
     }
 
     .floating-img-12 {
-        top: 920px;
-        right: -20px;
+        top: 900px;
+        right: -10px;
     }
 }
     
