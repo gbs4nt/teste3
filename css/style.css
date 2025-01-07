@@ -561,9 +561,10 @@ button:hover {
     
     .floating-elements img {
         display: block;
-        width: 100px;
+        width: 70px;
     }
     .floating-img-1 {
+        width: 70px;
         top: 30px;
         left: 20px;
     }
