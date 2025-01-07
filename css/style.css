@@ -65,10 +65,11 @@ body {
 
 
 .floating-elements img {
-    width: 100px;
-    
-    position: absolute;
-    animation: float 4s ease-in-out infinite;
+    position: absolute; /* Garantir que as imagens flutuem sobre o conteúdo */
+    width: 70px; /* Tamanho inicial das imagens */
+    object-fit: contain;
+    transition: all 0.3s ease; /* Suavizar a animação de movimentação */
+    animation: float 4s infinite ease-in-out
 }
 
 @keyframes float {
@@ -76,6 +77,67 @@ body {
     50% { transform: translate(10px, 10px) scale(1.2); }
     100% { transform: translate(0, 0) scale(1); }
 }
+/* Configurações para telas maiores (padrão) */
+.floating-img-1 {
+    top: 20px;
+    left: 50px;
+}
+
+.floating-img-2 {
+    top: 100px;
+    right: 50px;
+}
+
+.floating-img-3 {
+    top: 180px;
+    left: 50px;
+}
+
+.floating-img-4 {
+    top: 260px;
+    right: 50px;
+}
+
+.floating-img-5 {
+    top: 340px;
+    left: 50px;
+}
+
+.floating-img-6 {
+    top: 420px;
+    right: 50px;
+}
+
+.floating-img-7 {
+    top: 500px;
+    left: 50px;
+}
+
+.floating-img-8 {
+    top: 580px;
+    right: 50px;
+}
+
+.floating-img-9 {
+    top: 660px;
+    left: 50px;
+}
+
+.floating-img-10 {
+    top: 740px;
+    right: 50px;
+}
+
+.floating-img-11 {
+    top: 820px;
+    left: 50px;
+}
+
+.floating-img-12 {
+    top: 900px;
+    right: 50px;
+}
+
 .header {
     background-color: #f5c146;; /* Amarelo dourado */
     color: #2c3e50;
@@ -441,7 +503,6 @@ button:hover {
     button {
         font-size: 14px;
         padding: 6px 10px;
-        /* display: none; */
     }
 
     .photo-gallery {
@@ -457,7 +518,7 @@ button:hover {
         display: flex;
         
         flex-wrap: nowrap;
-        overflow-x: hidden;
+        
         scroll-snap-type: x mandatory;
         transition: tranform 0.3 ease;
         gap: 10px;
@@ -465,10 +526,9 @@ button:hover {
 
     .carousel-wrapper{
         width: 100%;
-        overflow: hidden;
     }
     .carousel-item {
-        flex: 0 0 45%;
+        flex: 0 0 94%;
     }
     .card {
         flex: 0 0 auto;
@@ -482,7 +542,8 @@ button:hover {
     }
 
     #prevBtn, #nextBtn {
-        display: none;
+        font-size: 24px;
+        padding: 15px 20px;
     }
 
     .extra-info h2 {
@@ -496,10 +557,76 @@ button:hover {
     .final-message {
         font-size: 16px;
     }
-
+    
+    
     .floating-elements img {
-        width: 20px;
+        display: block;
+        width: 100px;
     }
+    .floating-img-1 {
+        top: 30px;
+        left: 20px;
+    }
+
+    .floating-img-2 {
+        top: 120px;
+        right: -20px;
+    }
+
+    .floating-img-3 {
+        top: 200px;
+        left: 20px;
+    }
+
+    .floating-img-4 {
+        top: 280px;
+        right: -20px;
+    }
+
+    .floating-img-5 {
+        top: 360px;
+        left: 20px;
+    }
+
+    .floating-img-6 {
+        top: 440px;
+        right: -20px;
+    }
+
+    .floating-img-7 {
+        top: 520px;
+        left: 20px;
+    }
+
+    .floating-img-8 {
+        top: 600px;
+        right: -20px;
+    }
+
+    .floating-img-9 {
+        top: 680px;
+        left: 20px;
+    }
+
+    .floating-img-10 {
+        top: 760px;
+        right: -20px;
+    }
+
+    .floating-img-11 {
+        top: 840px;
+        left: 20px;
+    }
+
+    .floating-img-12 {
+        top: 920px;
+        right: -20px;
+    }
+}
+    
+    
+    
+    
 
     .heart {
         width: 40px;
@@ -511,4 +638,4 @@ button:hover {
         width: 40px;
         height: 40px;
     }
-}
+
