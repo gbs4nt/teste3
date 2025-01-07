@@ -441,6 +441,7 @@ button:hover {
     button {
         font-size: 14px;
         padding: 6px 10px;
+        /* display: none; */
     }
 
     .photo-gallery {
@@ -454,7 +455,7 @@ button:hover {
 
     .carousel {
         display: flex;
-        touch-action: pan-x;
+        
         flex-wrap: nowrap;
         overflow-x: hidden;
         scroll-snap-type: x mandatory;
